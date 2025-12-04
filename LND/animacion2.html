@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación de Cargador con Ondas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #2c3e50; /* Fondo oscuro */
+            color: white;
+            flex-direction: column;
+        }
+
+        .loader-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #34495e;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5) inset;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #1abc9c, #16a085); /* Degradado de color */
+            /* Inicia la animación 'llenar' */
+            animation: llenar 4s ease-in-out infinite;
+            /* Usa clip-path para dar forma de onda a la parte superior */
+            clip-path: polygon(0 100%, 100% 100%, 100% 80%, 75% 85%, 50% 80%, 25% 85%, 0 80%);
+        }
+
+        /* Animación para el movimiento de las ondas (sutil cambio de forma) */
+        .wave::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #1abc9c, #16a085);
+            /* Desplaza un duplicado de la onda para crear profundidad */
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+            animation: ondular 2s linear infinite;
+        }
+
+        /* Animación principal que controla el nivel del agua */
+        @keyframes llenar {
+            0% {
+                transform: translateY(100%); /* Empieza completamente vacío */
+                clip-path: polygon(0 100%, 100% 100%, 100% 100%, 75% 100%, 50% 100%, 25% 100%, 0 100%);
+            }
+            100% {
+                transform: translateY(0); /* Termina completamente lleno */
+                clip-path: polygon(0 100%, 100% 100%, 100% 20%, 75% 25%, 50% 20%, 25% 25%, 0 20%);
+            }
+        }
+
+        /* Animación secundaria para el movimiento horizontal de la onda */
+        @keyframes ondular {
+            0% {
+                transform: translateX(0) scaleY(1);
+            }
+            50% {
+                transform: translateX(-20px) scaleY(0.8);
+            }
+            100% {
+                transform: translateX(0) scaleY(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="wave"></div>
+    </div>
+    <p style="margin-top: 20px;">Cargando... Efecto de onda</p>
+</body>
+</html>

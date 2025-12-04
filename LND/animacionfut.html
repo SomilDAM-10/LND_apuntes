@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación de Fútbol (Jugador)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #eee;
+        }
+
+        .campo {
+            width: 800px;
+            height: 400px;
+            background-color: #4CAF50;
+            position: relative;
+            overflow: hidden;
+            border: 10px solid white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        /* Simulación de la portería */
+        .porteria {
+            position: absolute;
+            right: 10px;
+            bottom: 100px;
+            width: 50px;
+            height: 100px;
+            background-color: #fff;
+            border: 3px solid #333;
+            /* Crea el efecto de red */
+            background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc),
+                              linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
+            background-position: 0 0, 10px 10px;
+            background-size: 20px 20px;
+        }
+
+        /* Simulación del jugador (simple silueta) */
+        .jugador {
+            position: absolute;
+            bottom: 100px;
+            left: -50px; /* Comienza fuera de la vista */
+            width: 40px;
+            height: 80px;
+            background-color: #e74c3c; /* Uniforme rojo */
+            border-radius: 5px;
+            /* Animación principal del movimiento */
+            animation: correr-rematar 4s forwards;
+            animation-timing-function: linear;
+        }
+
+        /* Simulación del balón */
+        .balon-animado {
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle at 30% 30%, #fff, #eee 40%, #000 60%);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 100px;
+            left: -30px;
+            /* Animación del balón después del golpeo */
+            animation: patear 4s forwards;
+            animation-timing-function: cubic-bezier(0, 0, 0.4, 1); /* Curva de tiro */
+        }
+
+        /* Define la trayectoria del jugador */
+        @keyframes correr-rematar {
+            0% { left: -50px; }
+            50% { left: 450px; } /* Llega cerca de la posición de remate */
+            100% { left: 450px; } /* Se queda quieto después del remate */
+        }
+
+        /* Define la trayectoria del balón */
+        @keyframes patear {
+            0% {
+                left: -30px;
+                bottom: 100px;
+            }
+            50% {
+                left: 450px; /* Se mueve con el jugador */
+                bottom: 100px;
+            }
+            75% {
+                left: 600px; /* El balón se separa y sube ligeramente (el tiro) */
+                bottom: 150px;
+                transform: scale(1);
+            }
+            100% {
+                left: 720px; /* Entra en la portería */
+                bottom: 110px;
+                transform: scale(0.5); /* Se encoge un poco al entrar */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="campo">
+        <div class="porteria"></div>
+        <div class="jugador"></div>
+        <div class="balon-animado"></div>
+    </div>
+</body>
+</html>

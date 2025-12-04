@@ -1,0 +1,37 @@
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <title>JS2</title>
+    </head>
+    <body>
+        <script>
+            let fecha = new Date();
+            let diasemana;
+            switch (fecha.getDay()) {
+                case 0:
+                    diasemana="Domingo";
+                    break;
+                case 1:
+                    diasemana = "Lunes"
+                    break;
+                case 2:
+                    diasemana="Martes";
+                    break;
+                case 3:
+                    diasemana="Miércoles";
+                    break;
+                case 4:
+                    diasemana="Jueves";
+                    break;
+                case 5:
+                    diasemana="Viernes";
+                    break;
+                default:
+                    diasemana = "Sábado";
+                    break;
+            }
+            alert(fecha.getDay());
+        </script>
+    </body>
+    
+</html>

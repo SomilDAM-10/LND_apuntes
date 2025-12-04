@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>fecha</title>
+        <meta charset="utf-8">
+        <style>
+            div {
+                text-align: center;
+                margin-bottom: 1em;
+            }
+            button {
+                margin-top: 1em;
+            }
+        </style>
+
+    </head>
+    <body>
+        
+    </body>
+    <div>
+        <label for="fecha">Fecha: </label>
+        <input id="fecha" type="date">
+        <br>
+        <button onclick="diasemana()">Dia Semana</button>
+    </div>
+    <div>
+        <h3 id="resultado"></h3>
+
+    </div>
+    
+    <script>
+        function diasemana() {
+        const dias = ["domingo", "lunes","martes","miercoles","jueves", "viernes","sábado"];
+        const meses = ["enero", "febrero", "marzo", "abril", "mayo","junio","julio","agosto", "septiembre", "octubre","noviembre", "diciembre"];
+        const fecha = new Date(document.getElementById("fecha").value);
+        const salida= "El día "+fecha.getDate()+ " de "+meses[fecha.getMonth()]+ " del año " +fecha.getFullYear()+ " es "+dias[fecha.getDay()];
+        document.getElementById("resultado").innerText=salida;   
+        }
+    </script>
+</html>
+
+//En un input no es innerText es .value         

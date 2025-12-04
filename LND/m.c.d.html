@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>M. C. D</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div>
+            <label for="primero">Primer número: </label>
+            <input id="primero" type="number">
+        </div>
+        <div>
+            <label for="segundo">Segundo número: </label>
+            <input  id="segundo" type="number">
+        </div>
+        <h1 id="resultado"></h1>
+        <button onclick="mcd()">m. c. d.</button>
+        <script>
+            function mcd() {
+                let a=document.getElementById("primero").value;
+                let b=document.getElementById("segundo").value;
+                for(;a!=b;) {
+                    if(a > b){
+                        a = a - b;
+                    } else {
+                        b = b - a;
+                    }
+                }
+                document.getElementById("resultado").innerText = "El Máximo Común Divisor es "+a;
+                return;
+            }
+
+        </script>
+    </body>
+
+</html>

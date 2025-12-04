@@ -1,0 +1,111 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Práctica Grid</title>
+
+    <style>
+        .contenedor {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+            border: 3px solid black;
+            height: 60vh;
+            gap: 5px;
+        }
+
+        .contenedor > div {
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .bloque1 { background: lightblue; }
+        .bloque2 { background: lightgreen; }
+        .bloque3 { background: pink; }
+        .bloque4 { background: lightyellow; }
+        .bloque5 { background: #ddd; }
+        .bloque6 { background: #eee; }
+        .bloque7 { background: #fafafa; }
+        .bloque8 { background: #ffc; }
+        .bloque9 { background: #cff; }
+
+        button { margin: 5px; }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="bloque1">
+        <p>Panel A</p>
+        <button onclick="accion1()">Botón A</button>
+    </div>
+
+    <div class="bloque2">
+        <p>Zona B</p>
+        <button onclick="accion2()">Botón B</button>
+    </div>
+
+    <div class="bloque3">
+        <p id="textoC">Texto C</p>
+        <button onclick="accion3()">Botón C</button>
+    </div>
+
+    <div class="bloque4" id="bloque4">
+        <p>Elemento X</p>
+    </div>
+
+    <div class="bloque5" id="bloque5">
+        <p>Elemento Y</p>
+    </div>
+
+    <div class="bloque6">
+        <img id="imagen1" src="http://lnd.angelmelchor.pro/tiny.jpg">
+    </div>
+
+    <div class="bloque7">
+        <button onclick="accion4()">Ocultar imagen</button>
+    </div>
+
+    <div class="bloque8">
+        <button onclick="accion5()">Cambiar color Y</button>
+    </div>
+
+    <div class="bloque9">
+        <button onclick="accion6()">Eliminar X</button>
+    </div>
+
+</div>
+
+<script>
+    function accion1() {
+        alert("Botón A presionado");
+    }
+
+    function accion2() {
+        document.getElementById("textoC").style.color = "red";
+    }
+
+    function accion3() {
+        document.getElementById("textoC").remove();
+    }
+
+    function accion4() {
+        document.getElementById("imagen1").style.display = "none";
+    }
+
+    function accion5() {
+        document.getElementById("bloque5").style.background = "orange";
+    }
+
+    function accion6() {
+        document.getElementById("bloque4").remove();
+    }
+</script>
+
+</body>
+</html>

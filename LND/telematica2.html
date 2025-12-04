@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Telemática</title>
+        <meta charset="utf-8">
+        <style>
+            .contenedor {
+                display:grid;
+                grid-template-columns: auto auto auto;
+                border:3px solid black;
+                text-align:center;
+                height:40vh;
+            }
+            .contenedor > div, p {
+                border:1px dotted green;
+            }
+            .contenedor > div:nth-of-type(1){
+                padding-left:10px;
+                padding-right:10px;
+            }
+            p {
+                margin:0;
+            }
+            .contenedor > div:nth-of-type(5) {
+                display:flex;
+                justify-content: space-around;
+                align-items: center;
+                grid-column-start: 1;
+                grid-row-start:2;
+            }
+            .contenedor > div:nth-of-type(5) > p {
+                border:2px solid red;
+                background-color: lime;
+                padding:5px;
+            }
+            .contenedor > div:nth-of-type(6) {
+                grid-column-start: 1;
+                grid-row-start: 1;
+            }
+            .contenedor > div:nth-of-type(8) {
+                grid-column-start: 3;
+            }
+            .contenedor > div:nth-of-type(3) {
+                grid-row: 2 / 4;
+                grid-column-start:2;
+                display:flex;
+                justify-content:center;
+                align-items: center;
+                background-color:lightyellow;
+            }
+        </style>
+    <body>
+        <p>Párrafo</p>
+        <div class="contenedor">
+            <div>
+                <p>Párrafo 1</p>
+            </div>
+            <div>
+                <a>Elemento a1</a>
+            </div>
+            <div>
+                <a>Elemento a2</a>
+            </div>
+            <div>
+                <p>Párrafo 2</p>
+            </div>
+             <div>
+                <p>Párrafo 3</p>
+                 <p>Párrafo 2</p>
+                <p>Párrafo 2</p>
+            </div>
+            <div>
+                <img src="http://lnd.angelmelchor.pro/tiny.jpg">
+            </div>
+            <div>
+                <a>Elemento a1</a>
+            </div>
+            <div>
+                <a>Elemento a2</a>
+            </div>
+        </div>
+    </body>
+</html>

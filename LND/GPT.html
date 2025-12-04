@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>Práctica Grid 2</title>
+    <meta charset="utf-8">
+    <style>
+        button {
+            padding: 1em;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            border: 3px solid darkred;
+            text-align: center;
+            height: 60vh;
+        }
+
+        .contenedor > div {
+            border: 0.13em solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial;
+            font-size: 1.2em;
+        }
+
+        /* 1: título grande */
+        .contenedor > div:nth-of-type(1) {
+            grid-column: 1 / 5 ;
+            background-color: lightsteelblue;
+            height: 80px;
+        }
+
+        /* 2: imagen izquierda */
+        .contenedor > div:nth-of-type(2) {
+            grid-column: 1 / 2;
+            background-color: lightgray;
+        }
+
+        /* 3: bloque de botones centrado */
+        .contenedor > div:nth-of-type(3) {
+            grid-column: 2 / 4;
+            background-color: palegreen;
+        }
+
+        /* 4: imagen derecha */
+        .contenedor > div:nth-of-type(4) {
+            grid-column: 4 / 5;
+            background-color: lightgray;
+        }
+
+        /* 5: texto grande ocupando dos columnas */
+        .contenedor > div:nth-of-type(5) {
+            grid-column: 1 / 2;
+            background-color: lightyellow;
+        }
+
+        .contenedor > div:nth-of-type(6) {
+            grid-column: 2 / 3;
+
+        }
+
+        /* 6: lista de elementos derecha */
+        .contenedor > div:nth-of-type(7) {
+            grid-column: 3 / 5;
+            background-color: rgb(255, 230, 230);
+        }
+
+        /* 7: panel inferior con botones repartidos */
+        .contenedor > div:nth-of-type(8) {
+            grid-column: 1 / 5;
+            background-color: rgb(220, 255, 255);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+
+        <div>
+            <h2>Panel Principal</h2>
+        </div>
+
+        <div>
+            <img src="http://lnd.angelmelchor.pro/tiny.jpg">
+        </div>
+
+        <div>
+            <button onclick="bye3()" id="A">A</button>
+            <button>B</button>
+            <button>C</button>
+            <button>D</button>
+        </div>
+
+        <div>
+            <img src="http://lnd.angelmelchor.pro/tiny.jpg">
+        </div>
+
+        <div>
+            <p>Zona de Información</p>
+        </div>
+        <div>
+            <p>Zona de Descripción</p>
+        </div>
+        <div>
+            <ul style="list-style:none;" id="adiosli">
+                <li>Elemento X</li>
+                <li>Elemento Y</li>
+                <li>Elemento Z</li>
+            </ul>
+        </div>
+
+        <div>
+            <button>1</button>
+            <button>2</button>
+            <button id="bye">3</button>
+            <button>4</button>
+        </div>
+
+    </div>
+
+    <script>
+        const botonA = document.getElementById("A");
+        const boton3 = document.getElementById("bye");
+        const lista = document.getElementById("adiosli");
+
+        function bye3() {
+            boton3.remove();
+            lista.remove();
+        }
+
+    </script>
+</body>
+</html>

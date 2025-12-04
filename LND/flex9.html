@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FLEX ejemplo 9</title>
+    <style>
+        header,section,footer,aside,nav,main,article,figure{
+            display:block;
+        }
+        .contenedorFlex{
+            display: flex;
+            background: beige;
+            flex-flow: row wrap;
+            justify-content:flex-start;
+            align-items:stretch;
+        }
+
+        p:not(:nth-of-type(1)) {
+            flex:1 0 20%;
+            border:1px solid grey;
+        }
+        p:nth-of-type(1){
+            flex:7 0 20%;
+            border:1px solid grey;
+        }
+    </style>
+<body>
+    <main class="contenedorFlex">
+
+        <p>1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum incidunt, nostrum! lorem</p>
+        
+        <p>2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore ipsa laudantium ea.</p>
+        
+        <p>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam laborum provident pariatur aspernatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id maiores reiciendis quod sit cupiditate debitis amet mollitia, recusandae consequatur alias!</p>
+        
+        <p>4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam voluptatem tempore blanditiis facere natus.</p>
+        
+        <p>5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, animi! Reiciendis, sequi, quasi. Totam, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eius, velit reiciendis molestiae vitae ipsam.</p>
+        
+    </main>    
+</body>
+</html>
+
+<!--justify-content:flex-start → elementos pegados a la izquierda.
+
+align-items:stretch → elementos ocupan toda la altura disponible de la fila.
+
+flex-wrap → permite que los elementos que no caben pasen a otra fila.
+p:not(:nth-of-type(1)) -> Selecciona todos los <p> excepto el primero.-->

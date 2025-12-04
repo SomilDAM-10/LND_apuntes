@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elementos con mismo ancho proporcional con FLEX</title>
+    <style>
+        header,section,footer,aside,nav,main,article,figure{
+            display:block;
+        }
+        .contenedorFlex{
+            display: flex;
+            background: beige;
+            flex-flow: row wrap;
+            justify-content:flex-start;
+            align-items:stretch;
+        }
+        p {
+            border: 5px solid gray;
+            margin: 12px;
+            flex: 1 0 45%;
+        }
+        
+        
+/*
+1. flex-grow: 1
+
+Indica cuánto puede crecer el elemento en relación con los demás elementos flexibles del contenedor.
+
+1 significa que puede crecer para ocupar espacio extra disponible.
+
+2️. flex-shrink: 0
+
+Indica cuánto puede encogerse si no hay suficiente espacio.
+
+0 significa que no se encogerá, manteniendo al menos su tamaño base (flex-basis).
+
+3️. flex-basis: 45%
+
+Es el tamaño base del elemento antes de crecer o encogerse.
+
+Aquí el ancho inicial será 45% del contenedor.*/
+        
+
+/* Con este ejemplo conseguimos a través de FLEX
+         poder establecer dos elementos proporcionalmente iguales
+         sin tener que estar pendientes de márgenes */
+
+
+         
+    </style>
+<body>
+    <main class="contenedorFlex">
+
+        <p>1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum incidunt, nostrum! lorem</p>
+        
+        <p>2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore ipsa laudantium ea.</p>
+        
+        <p>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam laborum provident pariatur aspernatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id maiores reiciendis quod sit cupiditate debitis amet mollitia, recusandae consequatur alias!</p>
+        
+        <p>4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam voluptatem tempore blanditiis facere natus.</p>
+        
+        <p>5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, animi! Reiciendis, sequi, quasi. Totam, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eius, velit reiciendis molestiae vitae ipsam.</p>
+        
+    </main>    
+</body>
+</html>

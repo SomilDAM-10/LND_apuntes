@@ -1,0 +1,116 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio Grid</title>
+
+    <style>
+        .contenedor {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+            gap: 8px;
+            height: 60vh;
+            border: 3px solid black;
+        }
+
+        .contenedor > div {
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial;
+            padding: 10px;
+        }
+
+        .b1 { background: lightblue; }
+        .b2 { background: lightgreen; }
+        .b3 { background: pink; }
+        .b4 { background: lightyellow; }
+        .b5 { background: #ddd; }
+        .b6 { background: #eee; }
+        .b7 { background: #fafafa; }
+        .b8 { background: #ffc; }
+        .b9 { background: #cff; }
+
+        button { margin: 5px; }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="b1">
+        <p id="texto1">Bloque 1</p>
+        <button onclick="modificaTexto1()" id="btn1">Botón 1</button>
+    </div>
+
+    <div class="b2">
+        <p>Bloque 2</p>
+        <button onclick="ocultaimg()" id="btn2">Botón 2</button>
+    </div>
+
+    <div class="b3">
+        <p id="textoC">Texto C</p>
+        <button onclick="eliminaTextoC()" id="btn3">Botón 3</button>
+    </div>
+
+    <div class="b4" id="bloqueX">
+        <p>Elemento X</p>
+    </div>
+
+    <div class="b5" id="bloqueY">
+        <p>Elemento Y</p>
+    </div>
+
+    <div class="b6">
+        <img id="imagen1" src="http://lnd.angelmelchor.pro/tiny.jpg">
+    </div>
+
+    <div class="b7">
+        <button onclick="cambioColFond()" id="btn4">Botón 4</button>
+    </div>
+
+    <div class="b8">
+        <button onclick="nuevoBoton()" id="btn5">Botón 5</button>
+    </div>
+
+    <div class="b9">
+        <p id="b9">Bloque vacío</p>
+    </div>
+
+</div>
+
+<script>
+    const modTexto1 = document.getElementById("texto1");
+    function modificaTexto1() {
+        modTexto1.innerText= "Texto modificado desde el Bóton 1";
+    }
+
+    function ocultaimg() {
+        document.getElementById("imagen1").style.display = "none";
+    }
+
+    function eliminaTextoC() {
+        document.getElementById("textoC").remove();
+    }
+
+    function cambioColFond() {
+        document.getElementById("bloqueY").style.backgroundColor = "red";
+    }
+    const bloque9 = document.getElementById("b9");
+    const boton = document.createElement("button");
+
+    function nuevoBoton() {
+        boton.textContent = "Nuevo botón creado";
+        bloque9.appendChild(boton); 
+    }
+    
+    /*appendChild es un método de JavaScript que se usa para agregar
+     un elemento hijo dentro de otro elemento en el DOM (la estructura HTML de la página).*/
+
+</script>
+
+</body>
+</html>

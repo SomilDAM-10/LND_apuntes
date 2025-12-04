@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación Avanzada de Latido</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+
+        .corazon {
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c; /* Rojo */
+            position: relative;
+            transform: rotate(-45deg); /* Rota el div para que parezca un corazón */
+            /* Propiedades de la animación */
+            animation-name: latir;
+            animation-duration: 1.2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            /* Sombra inicial */
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.7);
+        }
+
+        /* Crea la parte superior izquierda del corazón usando un pseudo-elemento */
+        .corazon::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+        }
+
+        /* Crea la parte superior derecha del corazón usando un pseudo-elemento */
+        .corazon::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -50px;
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+        }
+
+        /* Definición de la animación de latido */
+        @keyframes latir {
+            0% {
+                transform: rotate(-45deg) scale(1); /* Escala normal y rotación */
+                box-shadow: 0 0 20px rgba(231, 76, 60, 0.7);
+            }
+            14% {
+                transform: rotate(-45deg) scale(1.1); /* Se agranda (el latido) */
+                box-shadow: 0 0 40px rgba(231, 76, 60, 0.9); /* Brillo más intenso */
+            }
+            28% {
+                transform: rotate(-45deg) scale(1); /* Vuelve a la normalidad */
+                box-shadow: 0 0 20px rgba(231, 76, 60, 0.7);
+            }
+            42% {
+                transform: rotate(-45deg) scale(1.1); /* Segundo latido (más pequeño) */
+                box-shadow: 0 0 30px rgba(231, 76, 60, 0.8);
+            }
+            56% {
+                transform: rotate(-45deg) scale(1); /* Normalidad */
+                box-shadow: 0 0 20px rgba(231, 76, 60, 0.7);
+            }
+            100% {
+                transform: rotate(-45deg) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="corazon"></div>
+</body>
+</html>

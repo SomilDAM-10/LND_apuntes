@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>JS1</title>
+        <meta charset="utf-8">
+        <style>
+            h1 {
+                color:red;
+            }
+            h1:last-of-type {
+                color:green;
+            }
+        </style>
+    </head>
+    <body>
+        <script> 
+            let a;
+            a=7;
+            console.log(a);
+            {
+                //let a;
+                a = "tate"
+                let b;
+                b = "hola"
+                console.log(a);
+                console.log(b);
+                a = "adios";
+            }
+            console.log(a);
+            document.write("<h1>Esto es un encabezado</h1>");
+            //console.log(b);
+        </script>
+        <p>Esto va después</p>
+        <script>document.write("<h1>Esto es un encabezado</h1><p>Este es otro párrafo</p><img src='http://angelmelchor.pro/foto.png'>");</script>
+        <div>
+            <button onclick="document.write('<h1>Corre!!!</h1>')">Alerta!!!</button>
+        </div>
+    </body>
+</html>

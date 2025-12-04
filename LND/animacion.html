@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación con HTML y CSS</title>
+    <style>
+        /* Estilos para el contenedor de la animación */
+        .contenedor {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Oculta cualquier parte del elemento animado que se salga del contenedor */
+        }
+
+        /* Estilos para el elemento a animar */
+        .cuadrado {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            position: relative; /* Necesario para que la animación 'mover' funcione */
+            animation-name: mover; /* Nombre de la animación definida con @keyframes */
+            animation-duration: 4s; /* Duración de la animación */
+            animation-iteration-count: infinite; /* Número de veces que se repite (infinito en este caso) */
+            animation-timing-function: linear; /* Tipo de curva de aceleración */
+        }
+
+        /* Definición de la animación usando @keyframes */
+        @keyframes mover {
+            0% {
+                left: -100px; /* Inicia fuera del contenedor por la izquierda */
+                background-color: #3498db;
+            }
+            50% {
+                left: 100px; /* Se mueve hacia la derecha */
+                background-color: #e74c3c; /* Cambia de color a rojo */
+                transform: rotate(180deg); /* Rota 180 grados */
+            }
+            100% {
+                left: -100px; /* Vuelve a la posición inicial */
+                background-color: #3498db;
+                transform: rotate(0deg); /* Vuelve a la rotación original */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Animación CSS</h1>
+    <p>Un cuadrado se moverá y cambiará de color dentro del contenedor.</p>
+    
+    <div class="contenedor">
+        <div class="cuadrado"></div>
+    </div>
+</body>
+</html>

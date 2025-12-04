@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Solar Animado</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Fondo del espacio */
+            overflow: hidden; /* Oculta barras de desplazamiento si los elementos se salen */
+        }
+
+        .sistema-solar {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+
+        .sol {
+            width: 50px;
+            height: 50px;
+            background-color: #f1c40f; /* Amarillo */
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px #f1c40f, 0 0 40px rgba(241, 196, 15, 0.5);
+        }
+
+        /* Contenedor para la órbita de Mercurio */
+        .orbita-mercurio {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150px;
+            height: 150px;
+            margin-top: -75px;
+            margin-left: -75px;
+            border-radius: 50%;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            animation: rotar 8s linear infinite; /* Rotación rápida */
+        }
+
+        /* Contenedor para la órbita de la Tierra */
+        .orbita-tierra {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            margin-top: -150px;
+            margin-left: -150px;
+            border-radius: 50%;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            animation: rotar 20s linear infinite; /* Rotación media */
+        }
+
+        /* Estilo base para los planetas */
+        .planeta {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .mercurio {
+            width: 10px;
+            height: 10px;
+            background-color: #95a5a6; /* Gris */
+            top: 0; /* Posicionado al borde de su órbita */
+        }
+
+        .tierra {
+            width: 20px;
+            height: 20px;
+            background-color: #3498db; /* Azul */
+            top: 0;
+        }
+        
+        /* Animación general de rotación */
+        @keyframes rotar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="sistema-solar">
+        <div class="sol"></div>
+        
+        <!-- Mercurio -->
+        <div class="orbita-mercurio">
+            <div class="planeta mercurio"></div>
+        </div>
+
+        <!-- Tierra -->
+        <div class="orbita-tierra">
+            <div class="planeta tierra"></div>
+        </div>
+    </div>
+</body>
+</html>
